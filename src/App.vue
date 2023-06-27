@@ -1,7 +1,7 @@
 <script setup>
     import {ref, reactive, onMounted} from'vue'
     import { db } from './data/guitarras'
-     import Guitarra from './components/Guitarra.vue'
+    import Guitarra from './components/Guitarra.vue'
 
     const guitarras = ref([])
     //console.log(guitarras.value)
@@ -9,6 +9,10 @@
         //console.log('component ready...');
         guitarras.value = db;
     })
+
+    const addCar = ()=>{
+        console.log("add car ...")
+    }
 
 </script>
 
@@ -105,6 +109,7 @@
            <Guitarra
                 v-for="guitarra in guitarras"
                 v-bind:guitarra = "guitarra"
+                @add-car = "addCar"
            />
         </div>
     </main>

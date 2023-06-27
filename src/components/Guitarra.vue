@@ -10,9 +10,8 @@
         }
     })
 
-    const increase = ()=>{
-        number.value++
-    }
+    defineEmits(['add-car'])
+
 
 </script>
 
@@ -31,8 +30,8 @@
             <p class="fw-black text-primary fs-3">$ {{ guitarra.precio}}</p>
             <button 
                 type="button"
-                class="btn btn-dark w-100 "
-                v-on:click="increase"
+                class="btn btn-dark w-100"
+                @click="$emit('add-car')"
             >Agregar al Carrito</button>
         </div>
     </div><!-- FIN GUITARRA -->
