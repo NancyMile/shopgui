@@ -10,6 +10,10 @@
         }
     })
 
+    const increase = ()=>{
+        number.value++
+    }
+
 </script>
 
 <template>
@@ -28,7 +32,7 @@
             <button 
                 type="button"
                 class="btn btn-dark w-100 "
-                v-on:click="number++"
+                v-on:click="increase"
             >Agregar al Carrito</button>
         </div>
     </div><!-- FIN GUITARRA -->
