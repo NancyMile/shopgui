@@ -10,8 +10,8 @@
         guitarras.value = db;
     })
 
-    const addCar = ()=>{
-        console.log("add car ...")
+    const addCar = (guitarra)=>{
+        console.log(guitarra)
     }
 
 </script>
