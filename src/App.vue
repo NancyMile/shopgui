@@ -4,6 +4,7 @@
     import Guitarra from './components/Guitarra.vue'
 
     const guitarras = ref([])
+    const carrito = ref([])
     //console.log(guitarras.value)
     onMounted(()=>{
         //console.log('component ready...');
@@ -11,7 +12,9 @@
     })
 
     const addCar = (guitarra)=>{
-        console.log(guitarra)
+        //console.log(guitarra)
+        guitarra.cantidad = 1
+        carrito.value.push(guitarra)
     }
 
 </script>
