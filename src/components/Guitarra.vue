@@ -1,8 +1,4 @@
 <script setup>
-    import {ref} from 'vue'
-
-    const number = ref(0)
-
     const props = defineProps({
         guitarra:{
             type: Object,
@@ -25,7 +21,6 @@
         </div>
         <div class="col-8">
             <h3 class="text-black fs-4 fw-bold text-uppercase">{{ guitarra.nombre}}</h3>
-            <p>{{ number }}</p>
             <p>{{ guitarra.descripcion}}</p>
             <p class="fw-black text-primary fs-3">$ {{ guitarra.precio}}</p>
             <button 
