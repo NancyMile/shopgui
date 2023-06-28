@@ -1,5 +1,5 @@
 <script setup>
-    import {ref, reactive, onMounted} from'vue'
+    import {ref, reactive, onMounted, watch} from'vue'
     import { db } from './data/guitarras'
     import Guitarra from './components/Guitarra.vue'
     import Header from './components/Header.vue'
@@ -8,11 +8,24 @@
     const guitarras = ref([])
     const carrito = ref([])
     const guitarra = ref({})
+
+    watch(carrito, ()=>{
+        //console.log('carrito cambio')
+        guardarLocalStorage()
+    },{
+        deep:true
+    })
+
     //console.log(guitarras.value)
     onMounted(()=>{
         //console.log('component ready...');
         guitarras.value = db;
         guitarra.value = db[3];
+
+        const carritoStorage = localStorage.getItem('carrito')
+        if(carrito){
+            carrito.value = JSON.parse(carritoStorage)
+        }
     })
 
     const addCar = (guitarra)=>{
@@ -47,6 +60,10 @@
     }
 
     const vaciarCarrito = () => carrito.value = []
+
+    const guardarLocalStorage = () =>{
+        localStorage.setItem('carrito',JSON.stringify(carrito.value))
+    }
 
 </script>
 
