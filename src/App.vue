@@ -82,6 +82,7 @@
         <div class="row mt-5">
            <Guitarra
                 v-for="guitarra in guitarras"
+                :key="guitarra.id"
                 v-bind:guitarra = "guitarra"
                 @add-car = "addCar"
            />
