@@ -42,6 +42,10 @@
             carrito.value[index].cantidad--
     }
 
+    const eliminarProducto = (id) =>{
+        carrito.value = carrito.value.filter(producto => producto.id !== id)
+    }
+
 </script>
 
 <template>
@@ -51,6 +55,7 @@
     @decrementar-cantidad="decrementarCantidad"
     @incrementar-cantidad="incrementarCantidad"
     @add-car="addCar"
+    @eliminar-producto="eliminarProducto"
     />
     <main class="container-xl mt-5">
         <h2 class="text-center">Nuestra Colección</h2>
